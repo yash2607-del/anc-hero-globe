@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a; /* Dark gray matching the gaps */
+  color: white;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #1a1a1a;
+}
+
+.hero-word-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24vw; /* Scaled back up for maximum hero impact */
+  font-weight: 900;
+  color: #a855f7; 
+  letter-spacing: -0.04em; /* Restores the characteristic tightly-packed letters from the SS */
+  font-family: Impact, 'Arial Black', sans-serif; /* Reverting to precise FANDOM reference font */
+  line-height: 0.8;
+  z-index: 10;
+  width: 100%;
+}
+
+.text-part {
+  display: inline-flex;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.globe-wrapper {
+  width: 0.9em; /* Globe diameter intentionally bleeds slightly above the text cap-height matching the SS */
+  height: 0.9em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0; 
+  margin: 0;
+}
+
+/* Force Three.js canvas to respect the flex wrapper constraints natively */
+.globe-wrapper > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Lenis Recommended CSS */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
