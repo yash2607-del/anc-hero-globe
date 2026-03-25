@@ -9,10 +9,18 @@
 body, html {
   width: 100%;
   height: 100%;
-  background: #1a1a1a; /* Dark gray matching the gaps */
+  background: #0d0d0d;
   color: white;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "DenimINK", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 #root {
@@ -28,19 +36,20 @@ body, html {
   align-items: center;
   position: relative;
   overflow: hidden;
-  background-color: #1a1a1a;
+  background-color: #0d0d0d;
 }
 
 .hero-word-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24vw; /* Scaled back up for maximum hero impact */
+  font-size: 24vw; 
   font-weight: 900;
-  color: #a855f7; 
-  letter-spacing: -0.04em; /* Restores the characteristic tightly-packed letters from the SS */
-  font-family: Impact, 'Arial Black', sans-serif; /* Reverting to precise FANDOM reference font */
-  line-height: 0.8;
+  color: #9D3DFE; 
+  letter-spacing: 0.01em;
+  font-family: "DenimINK", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  line-height: 0.9;
   z-index: 10;
   width: 100%;
 }
@@ -49,10 +58,11 @@ body, html {
   display: inline-flex;
   overflow: hidden;
   white-space: nowrap;
+  padding-bottom: 2vw; /* extra breathing room to prevent cutting bottom curves */
 }
 
 .globe-wrapper {
-  width: 0.9em; /* Globe diameter intentionally bleeds slightly above the text cap-height matching the SS */
+  width: 0.9em; 
   height: 0.9em;
   position: relative;
   display: flex;
@@ -62,13 +72,30 @@ body, html {
   margin: 0;
 }
 
-/* Force Three.js canvas to respect the flex wrapper constraints natively */
+.welcome-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  font-size: clamp(2.7rem, 12vw, 8.8rem);
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  z-index: 15;
+  opacity: 0;
+  pointer-events: none;
+}
+
+
 .globe-wrapper > div {
   width: 100% !important;
   height: 100% !important;
 }
 
-/* Lenis Recommended CSS */
 html.lenis, html.lenis body {
   height: auto;
 }
